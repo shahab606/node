@@ -17,14 +17,14 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    docker.build('Pipeline3')
+                    docker.build('pipeline3')
             }
         }
     }
         stage('Run'){
             steps{
                 script{
-                docker.image('Pipeline3').inside{
+                docker.image('pipeline3').inside{
                     sh 'node app.js'
                 }
             }
