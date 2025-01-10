@@ -31,7 +31,7 @@ pipeline {
                 }
             }
         }  
-    post{
+      post{
         always{
             clean up docker container and image after build
             script{
@@ -40,6 +40,6 @@ pipeline {
                 sh 'docker image rmi node-image || true'
             }       
         }
-    }    
-}  
+    }     
+  } 
 }    
