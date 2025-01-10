@@ -23,6 +23,7 @@ pipeline {
     }
         stage('Run'){
             steps{
+                script{
                 docker.image('Pipeline_3').inside{
                     sh 'Pipeline_3'
                 }
