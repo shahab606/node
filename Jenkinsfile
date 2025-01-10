@@ -26,7 +26,6 @@ pipeline {
             steps{
                 script{
                     sh 'docker run -d -p 3000:3000 --name my-node-app node-image'
-                    sh 'node app.js'
                 }
             }
          }
