@@ -28,16 +28,16 @@ pipeline {
                     sh 'node app.js'
                 }
             }
-        }
-    }  
-    post{
-        always{
+        }  
+   // post{
+      //  always{
             //clean up docker container and image after build
-            script{
-                sh 'docker stop my-node-app || true'
-                sh 'docker rm my-node-app || true'
-                sh 'docker image rmi node-image || true'
-            }       
-        }
-    }    
+         //   script{
+         //       sh 'docker stop my-node-app || true'
+             //   sh 'docker rm my-node-app || true'
+           //     sh 'docker image rmi node-image || true'
+        //    }       
+      //  }
+   // }    
+}  
 }    
