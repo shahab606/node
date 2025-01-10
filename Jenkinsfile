@@ -30,8 +30,9 @@ pipeline {
                     sh 'node app.js'
                 }
             }
+         }
         }  
-      post{
+      post {
         always{
             clean up docker container and image after build
             script{
@@ -42,4 +43,4 @@ pipeline {
         }
     }     
   } 
-}    
+
