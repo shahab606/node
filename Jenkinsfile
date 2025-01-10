@@ -12,6 +12,7 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sh "mvn test"
+                sh 'npm install express'
             }
         }
         stage('Build Docker image') {
@@ -25,8 +26,6 @@ pipeline {
             steps{
                 script{
                     sh 'docker run -d -p 3000:3000 --name my-node-app node-image'
-                    sh 'init -y'
-                    sh 'npm install express'
                     sh 'node app.js'
                 }
             }
