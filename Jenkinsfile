@@ -24,8 +24,8 @@ pipeline {
         stage('Run'){
             steps{
                 script{
-                docker.image('Pipeline_3').inside{
-                    sh 'Pipeline_3'
+                docker.image('Pipeline3').inside{
+                    sh 'node app.js'
                 }
             }
         }
