@@ -35,6 +35,7 @@ pipeline {
         always{
             //clean up docker container and image after build
             script{
+                input 'Do you want Delete Image and Container?'
                 sh 'docker stop my-node-app || true'
                 sh 'docker rm my-node-app || true'
                 sh 'docker image rmi node-image || true'
